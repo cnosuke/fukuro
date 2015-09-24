@@ -1,0 +1,4 @@
+# Fukuro
+
+# LICENSE
+MIT
