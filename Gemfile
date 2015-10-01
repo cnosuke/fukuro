@@ -28,6 +28,7 @@ gem 'sass-rails'
 gem 'therubyracer'
 gem 'uglifier'
 gem 'unicorn'
+gem 'aws-sdk'
 
 gem 'ridgepole'
 
