@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   namespace :v1 do
     resource :users, only: %i(show create)
     resource :fukuros, only: %i(show create)
+    resource :medias, only: %i(show create)
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

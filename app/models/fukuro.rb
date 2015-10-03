@@ -5,7 +5,7 @@ class Fukuro < ActiveRecord::Base
   belongs_to :user
   has_many :media
 
-  def to_json_response
+  def to_h
     {
       title: title
     }

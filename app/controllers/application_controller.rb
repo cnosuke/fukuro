@@ -27,7 +27,7 @@ class ApplicationController < ActionController::Base
     render(json: {
       status: status,
       message: message,
-      results: results.try(:to_json_response),
+      results: results.try(:to_h),
     })
   end
 end
