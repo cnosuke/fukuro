@@ -10,12 +10,12 @@ default: &default
 
 development:
   <<: *default
-  database: fukuro_development
+  database: furoshiki_development
 
 test:
   <<: *default
-  database: fukuro_test
+  database: furoshiki_test
 
 production:
   <<: *default
-  database: fukuro_production
+  database: furoshiki_production

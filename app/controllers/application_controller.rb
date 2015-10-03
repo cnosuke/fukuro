@@ -16,4 +16,18 @@ class ApplicationController < ActionController::Base
   def uuid_header
     request.headers['X-FUKURO-UUID']
   end
+
+  def res(status: 200, message: nil, results: nil)
+    if status.in?(200..299)
+      message = 'OK'
+    elsif status.in?(400..599)
+      message = 'Error'
+    end
+
+    render(json: {
+      status: status,
+      message: message,
+      results: results.try(:to_json_response),
+    })
+  end
 end

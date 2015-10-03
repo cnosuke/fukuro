@@ -1,4 +1,4 @@
-# Fukuro
+# Furoshiki
 
 # LICENSE
 MIT
