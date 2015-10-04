@@ -2,6 +2,6 @@ class Media < ActiveRecord::Base
   validates :fukuro_id, presence: true
   validates :content_hash, presence: true
 
-  belongs_to :fukuro
+  has_many :fukuro, through: :fukuro_media
   has_one :thumbnail
 end
