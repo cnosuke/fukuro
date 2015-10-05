@@ -3,7 +3,8 @@ class Fukuro < ActiveRecord::Base
   validates :title, presence: true
 
   belongs_to :user
-  has_many :media, through: FukuroMedia
+  has_many :fukuro_media
+  has_many :media, through: :fukuro_media
 
   def to_h
     {
