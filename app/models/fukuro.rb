@@ -6,6 +6,10 @@ class Fukuro < ActiveRecord::Base
   has_many :fukuro_media
   has_many :media, through: :fukuro_media
 
+  def owned_by?(user)
+    user_id == user.try(:id)
+  end
+
   def to_h
     {
       title: title,
