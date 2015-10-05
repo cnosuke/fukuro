@@ -1,5 +1,6 @@
 class Medium < ActiveRecord::Base
   validates :content_hash, presence: true
+  validates :ext, presence: true
 
   has_many :fukuro_media
   has_many :fukuros, through: :fukuro_media
@@ -18,6 +19,7 @@ class Medium < ActiveRecord::Base
     obj.fukuros << fukuro unless obj.fukuros.include?(fukuro)
 
     if obj.new_record?
+      obj.ext = extract_ext(file.original_filename)
       obj.save
       obj.save_file!(file)
     end
@@ -25,10 +27,13 @@ class Medium < ActiveRecord::Base
     obj
   end
 
+  def self.extract_ext(filename)
+    filename.split('.').try(:last) || ''
+  end
+
   def self.digest(f)
-    body = f.read
     f.rewind
-    Digest::SHA2.hexdigest(body)
+    Digest::SHA2.hexdigest(f.read)
   end
 
   def to_h
@@ -38,15 +43,15 @@ class Medium < ActiveRecord::Base
   end
 
   def save_file!(file)
-    open(save_location, 'w'){|f| f.write file.read }
     file.rewind
+    open(save_location, 'wb'){|f| f.write file.read }
   end
 
   def save_location
     if Rails.env.development?
       prefix = "#{Rails.root}/tmp/data"
       FileUtils.mkdir_p(prefix)
-      "#{prefix}/#{content_hash}"
+      "#{prefix}/#{content_hash}.#{ext}"
     else
       # not implemented
     end
