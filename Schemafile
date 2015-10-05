@@ -15,14 +15,14 @@ end
 
 add_index "users", ["uuid"], name: "idx_uuid", using: :btree, unique: true
 
-create_table "medum", force: :cascade do |t|
+create_table "media", force: :cascade do |t|
   t.integer  "fukuro_id",    limit: 4,     null: false
   t.string   "content_hash", limit: 64,     null: false
   t.datetime "created_at",               null: false
   t.datetime "updated_at",               null: false
 end
 
-add_index "medum", ["fukuro_id"], name: "idx_fukuro_id", using: :btree
+add_index "media", ["fukuro_id"], name: "idx_fukuro_id", using: :btree
 
 create_table "thumbnails", force: :cascade do |t|
   t.integer  "medium_id",    limit: 4,     null: false
