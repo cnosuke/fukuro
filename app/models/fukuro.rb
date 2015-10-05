@@ -7,7 +7,7 @@ class Fukuro < ActiveRecord::Base
 
   def to_h
     {
-      title: title
+      title: title,
     }
   end
 end
