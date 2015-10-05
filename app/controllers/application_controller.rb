@@ -19,9 +19,9 @@ class ApplicationController < ActionController::Base
 
   def res(status: 200, message: nil, results: nil)
     if status.in?(200..299)
-      message = 'OK'
+      message = message || 'OK'
     elsif status.in?(400..599)
-      message = 'Error'
+      message = message || 'Error'
     end
 
     render(json: {
