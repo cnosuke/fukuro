@@ -50,6 +50,7 @@ Example:
   "status": 200,
   "message": "OK",
   "results": {
+    "id": "2",
     "title": "foo"
   }
 }
@@ -64,6 +65,8 @@ Example:
   - `fukuro_id`
   - `file`
     - media(medium) file
+
+If the current_user is not the owner of fukuro, it returns 403.
 
 ### Response
 Example:

@@ -12,6 +12,7 @@ class Fukuro < ActiveRecord::Base
 
   def to_h
     {
+      id: id,
       title: title,
     }
   end
