@@ -1,6 +1,15 @@
 class V1::FukurosController < ApplicationController
 
   def show
+    @fukuro = Fukuro.active.find_by(title: params[:title])
+    if @fukuro
+      res(results: {
+        fukuto: @fukuro.to_h,
+        media: @fukuro.media.map(&:to_h),
+        })
+    else
+      res(status: 404, message: 'Fukuro not found.')
+    end
   end
 
   def create

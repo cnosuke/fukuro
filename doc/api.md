@@ -87,3 +87,35 @@ Example:
   }
 }
 ```
+
+## Get Fukuro
+
+### Request
+- GET `/v1/fukuros`
+- Authorization header is needed
+- params
+  - `title`
+
+Example:
+`/v1/fukuros?title=foo`
+
+### Response
+Example:
+
+```json
+{
+  "status": 200,
+  "message": "OK",
+  "results": {
+    "fukuto": {
+      "id": 6,
+      "title": "foo"
+    },
+    "media": [
+      {
+        "content_hash": "54e65584d6450793b8c8502da5de17a2c795ff125f0a1d8bffa679dd3cf53e75"
+      }
+    ]
+  }
+}
+```
