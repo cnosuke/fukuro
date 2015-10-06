@@ -17,7 +17,7 @@ class V1::FukurosController < ApplicationController
 
   def fukuro_params
     prms = params.
-      permit(:title)
+      permit(:title, :expired_at)
     prms.merge(user: current_user)
   end
 end

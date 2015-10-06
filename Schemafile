@@ -3,6 +3,8 @@ create_table "fukuros", force: :cascade do |t|
   t.string   "title",      limit: 256,     null: false
   t.datetime "created_at",               null: false
   t.datetime "updated_at",               null: false
+  t.datetime "expired_at",               null: false
+  t.datetime "deleted_at",               null: true, default: nil
 end
 
 add_index "fukuros", ["user_id"], name: "idx_user_id", using: :btree

@@ -41,6 +41,8 @@ Example:
 - Authorization header is needed.
 - params
   - `title`
+  - `expired_at`
+    Example: `2015-10-08 00:00:00 +0900`
 
 ### Response
 Example:
