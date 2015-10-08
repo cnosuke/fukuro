@@ -1,0 +1,10 @@
+production:
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: root
+  password: <%= ENV['MYSQL_ENV_MYSQL_ROOT_PASSWORD'] %>
+  timeout: 5000
+  host: <%= ENV['MYSQL_PORT_3306_TCP_ADDR'] %>
+  port: <%= ENV['MYSQL_PORT_3306_TCP_PORT'] %>
+  database: furoshiki_production
