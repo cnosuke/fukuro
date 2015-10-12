@@ -18,6 +18,8 @@ COPY Schemafile /app/
 COPY run_on_docker.sh /app/
 COPY dot_env /app/.env
 COPY database.yml.prod /app/config/database.yml
+COPY .git/logs/HEAD /GIT_LOGS
+RUN tail -1 /GIT_LOGS |awk '{print $2}' > /app/REVISION
 
 EXPOSE 8080
 CMD ["/app/run_on_docker.sh"]
