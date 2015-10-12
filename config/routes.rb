@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  namespace :hello do
+    get 'revision'
+  end
+
   namespace :v1 do
     resource :users, only: %i(show create)
     resource :fukuros, only: %i(show create)
