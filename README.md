@@ -5,11 +5,13 @@ MIT
 
 # setup
 
-### 1. 以下の環境変数に権限をもったmysqlのユーザーとPWをセット
+### 1. .envファイルに権限をもったmysqlのユーザーとPWを記述
 
-`% export DATABASE_USER=db_user_name`
-
-`% export DATABASE_PASSWORD=db_user_pw`
+```
+# .envファイルはfuroshikiのrootディレクトリに置く
+DATABASE_USER=db_user_name
+DATABASE_PASSWORD=db_user_pw
+```
 
 ### 2. 必要なgemを入れる
 
