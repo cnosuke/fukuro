@@ -20,7 +20,7 @@ DATABASE_PASSWORD=db_user_pw
 
 ### 3. DBの作成
 
-`% bundle exec rake db:crate`
+`% bundle exec rake db:create`
 
 ### 4. dbのテーブル構築
 
