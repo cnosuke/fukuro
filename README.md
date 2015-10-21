@@ -19,7 +19,7 @@ MIT
 
 ### 3. DBの作成
 
-`% rake db:crate`
+`% bundle exec rake db:crate`
 
 ### 4. dbのテーブル構築
 
