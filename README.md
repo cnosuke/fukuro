@@ -5,7 +5,6 @@ MIT
 
 # setup
 
-
 ### 1. 以下の環境変数に権限をもったmysqlのユーザーとPWをセット
 
 `% export DATABASE_USER=db_user_name`
