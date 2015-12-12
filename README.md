@@ -5,25 +5,28 @@ MIT
 
 # setup
 
-1. 以下の環境変数に権限をもったmysqlのユーザーとPWをセット
+### 1. .envファイルに権限をもったmysqlのユーザーとPWを記述
 
-`% export DATABASE_USER=db_user_name`
+```
+# .envファイルはfuroshikiのrootディレクトリに置く
+DATABASE_USER=db_user_name
+DATABASE_PASSWORD=db_user_pw
+```
 
-`% export DATABASE_PASSWORD=db_user_pw`
-
-2. DBの作成
-
-`% rake db:crate`
-
-3. 必要なgemを入れる
+### 2. 必要なgemを入れる
 
 `bundle install # furoshikiのrootディレクトリで`
 
-4. dbのテーブル構築
 
-`rake db:migrate`
+### 3. DBの作成
 
-5. railsの起動
+`% bundle exec rake db:create`
 
-`rails s`
+### 4. dbのテーブル構築
+
+`bundle exec rake db:migrate`
+
+### 5. railsの起動
+
+`bundle exec rails s`
 
